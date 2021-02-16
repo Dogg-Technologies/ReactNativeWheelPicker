@@ -1,11 +1,14 @@
 {
-  "name": "react-native-wheel-picker-android",
+  "name": "@dogg/react-native-wheel-picker-android",
   "version": "3.0.0",
   "description": "Simple Wheel Picker for Android to use with react-native",
   "main": "index.tsx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kalontech/ReactNativeWheelPicker.git"
+    "url": "git+https://github.com/Dogg-Technologies/ReactNativeWheelPicker.git"
+  },
+  "scripts": {
+    "build": "npx babel src --out-dir dist"
   },
   "keywords": [
     "react-component",
@@ -14,17 +17,20 @@
     "picker",
     "wheel-picker",
     "date-picker",
-    "date-wheel-picker"
+    "date-wheel-picker",
+    "dogg"
   ],
-  "author": "Artem Kosiakevych <artem.kosiakevych@gmail.com>",
+  "author": "Dogg Technologies",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kalontech/ReactNativeWheelPicker/issues"
+    "url": "https://github.com/Dogg-Technologies/ReactNativeWheelPicker/issues"
   },
-  "homepage": "https://github.com/kalontech/ReactNativeWheelPicker",
+  "homepage": "https://github.com/Dogg-Technologies/ReactNativeWheelPicker",
   "dependencies": {
-    "@react-native-community/picker": "^1.8.0",
-    "moment": "^2.24.0"
+    "@react-native-community/picker": "latest",
+    "moment": "^2.24.0",
+    "react": "16.13.1",
+    "react-native": "0.63.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -35,9 +41,11 @@
     "@types/react-native": "^0.63.45",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.14.0",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "4.0.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^7.17.0",
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-config-airbnb-typescript": "^12.0.0",
@@ -50,10 +58,10 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-reanimated": "^1.0.12",
+    "metro-react-native-babel-preset": "^0.65.1",
     "prettier": "^2.2.1",
     "prettier-eslint": "^12.0.0",
     "prettier-plugin-firestore-rules": "latest",
-    "metro-react-native-babel-preset": "0.63.0",
     "tslint": "^6.1.3",
     "typescript": "^4.1.3"
   }

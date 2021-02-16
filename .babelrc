@@ -1,4 +1,28 @@
 {
-  "presets": ["react-native"],
-  "ignore": false
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]
+    }
+  },
+  "presets": ["module:metro-react-native-babel-preset"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "extensions": [
+          ".ios.tsx",
+          ".android.tsx",
+          ".tsx",
+          ".ios.ts",
+          ".android.ts",
+          ".ts",
+          ".ios.js",
+          ".android.js",
+          ".js",
+          ".json"
+        ]
+      }
+    ],
+    "transform-inline-environment-variables"
+  ]
 }

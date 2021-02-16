@@ -1,5 +1,4 @@
 module.exports = {
-  root: true,
   env: {
     es2020: true,
     node: true,
@@ -11,7 +10,6 @@ module.exports = {
   //   project: './tsconfig.json',
   // },
   // plugins: ['@typescript-eslint'],
-  plugins: ['react-native'],
   rules: {
     quotes: ['error', 'single', { avoidEscape: true }],
     'prettier/prettier': 'error',
@@ -35,25 +33,11 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js', 'prettier.config.js'],
   settings: {
-    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.jsx'] }],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-        mjs: 'never',
-      },
-    ],
     'import/resolver': {
       typescript: {}, // this loads <rootdir>/tsconfig.json to eslint
       node: {
         paths: ['./src'],
       },
-      'react-native': { platform: 'any' },
     },
     react: {
       version: 'detect',
