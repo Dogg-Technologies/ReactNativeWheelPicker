@@ -6,7 +6,7 @@
 import React from 'react';
 import { requireNativeComponent, View } from 'react-native';
 
-const WheelPickerView = requireNativeComponent("WheelPicker", null);
+const WheelPickerView = requireNativeComponent('WheelPicker');
 
 type IProps = {
   data: Array<string>;
@@ -20,34 +20,26 @@ type IProps = {
   itemTextSize?: number;
   selectedItem?: number;
   backgroundColor?: string;
-  onItemSelected?: (number) => void;
+  onItemSelected?: (index: number) => void;
   disabled?: boolean;
 };
 
-export default class WheelPicker extends React.Component<IProps> {
-  static defaultProps = {
-    style: {
-      width: "auto",
-      height: 150,
-    },
-  };
-
-  onItemSelected = (event: any) => {
-    if (this.props.onItemSelected) {
-      this.props.onItemSelected(event.nativeEvent.position);
+export const WheelPicker = (props: IProps): React.ReactElement => {
+  const onItemSelected = (event: any) => {
+    if (props.onItemSelected) {
+      props.onItemSelected(event.nativeEvent.position);
     }
   };
 
-  render() {
-    const { isCyclic = false, data } = this.props;
-    return (
-      <View pointerEvents={this.props.disabled ? "none" : "auto"}>
-        <WheelPickerView
-          {...this.props}
-          isCyclic={data.length > 2 ? isCyclic : false}
-          onChange={this.onItemSelected}
-        />
-      </View>
-    );
-  }
-}
+  const { isCyclic = false, data, disabled } = props;
+  return (
+    <View pointerEvents={disabled ? 'none' : 'auto'}>
+      <WheelPickerView
+        style={{ width: 'auto', height: 150 }}
+        {...props}
+        isCyclic={data.length > 2 ? isCyclic : false}
+        onChange={onItemSelected}
+      />
+    </View>
+  );
+};

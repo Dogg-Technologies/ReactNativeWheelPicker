@@ -3,35 +3,36 @@
  * @flow
  * */
 
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import WheelPicker from './WheelPicker'
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+
 import {
-  hourTo24Format,
-  hourTo12Format,
-  pickerDateArray,
-  getHoursArray,
-  increaseDateByDays,
-  getFiveMinutesArray,
   getAmArray,
-} from './Utils'
+  getFiveMinutesArray,
+  getHoursArray,
+  hourTo12Format,
+  hourTo24Format,
+  increaseDateByDays,
+  pickerDateArray,
+} from './Utils';
+import WheelPicker from './WheelPicker';
 
 const millisecondsPerDay = 1000 * 60 * 60 * 24
 const HOUR = 60
 
 type Props = {
-  initDate: string,
-  hours: Array<number>,
-  minutes: Array<string>,
-  onDateSelected: Date => void,
-  startDate: string,
-  daysCount: number,
-  days: Array<number>,
-  hideDate?: boolean,
-  hideHours?: boolean,
-  hideMinutes?: boolean,
-  hideAM?: boolean,
-  format?: string
+  initDate: string;
+  hours: Array<number>;
+  minutes: Array<string>;
+  onDateSelected: (date:Date) => void;
+  startDate: string;
+  daysCount: number;
+  days: Array<number>;
+  hideDate?: boolean;
+  hideHours?: boolean;
+  hideMinutes?: boolean;
+  hideAM?: boolean;
+  format?: string;
 }
 
 type State = {
@@ -145,8 +146,8 @@ export default class DatePicker extends React.Component<Props, State> {
   }
 
   onDaySelected = (position: number) => {
-    let selectedDate = this.state.selectedDate
-    const daysAfterSelectedDate = new Date(this.state.daysAfterSelectedDate.getTime())
+    let selectedDate = new Date(this.state.selectedDate.getTime())
+    const daysAfterSelectedDate = this.state.daysAfterSelectedDate
     const hours = selectedDate.getHours()
     const minutes = selectedDate.getMinutes()
 

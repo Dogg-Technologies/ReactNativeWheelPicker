@@ -27,8 +27,34 @@
     "moment": "^2.24.0"
   },
   "devDependencies": {
-    "@types/react": "^16.9.56",
-    "react": "^17.0.1",
-    "react-native": "^0.63.3"
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react": "16.9.49",
+    "@types/react-native": "^0.63.45",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "4.0.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-airbnb-typescript-prettier": "^4.1.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-import-resolver-react-native": "^0.2.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-reanimated": "^1.0.12",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "prettier-plugin-firestore-rules": "latest",
+    "metro-react-native-babel-preset": "0.63.0",
+    "tslint": "^6.1.3",
+    "typescript": "^4.1.3"
   }
 }
